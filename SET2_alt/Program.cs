@@ -138,6 +138,11 @@ namespace SET2_alt
                 {
                     int a;
                     a = int.Parse(Console.ReadLine());
+                    if (a < 0 || a > 1)
+                    {
+                        Console.WriteLine("Secventa poate contine doar 0-uri si 1-uri!!!");
+                        return;
+                    }
                     if (i == 0)
                     {
                         if (a == 1)
@@ -173,11 +178,6 @@ namespace SET2_alt
                 Console.WriteLine($"Secventa introdusa este corecta si are nivelul maxim de incuibare {incuibaux2}"); // - 1 pentru ca nivel 1 = 1 paranteza intr-o paranteza prin interpretarea mea.
                 return;
             }
-            catch (IndexOutOfRangeException)
-            {
-                Console.WriteLine("\nSecventa de numere introdusa contine caractere necorespunzatoare sau nu corespunde lungimii declarate anterior!!!");
-                return;
-            }
             catch (FormatException)
             {
                 Console.WriteLine("\nSecventa de numere introdusa contine caractere necorespunzatoare sau nu corespunde lungimii declarate anterior!!!");
@@ -199,8 +199,6 @@ namespace SET2_alt
             uint n = N_CHECK();
             if (n == 0) return;
             Console.WriteLine("\nIntroduceti secventa de numere:");
-            int countdescresc = 0;
-            int countcresc = 0;
             int wascresc = 0;
             int wasdescresc = 0;
             bool bitonic = true;
@@ -374,11 +372,6 @@ namespace SET2_alt
                     return;
                 }
                 Console.WriteLine("Secventa nu este bitonica.");
-            }
-            catch (IndexOutOfRangeException)
-            {
-                Console.WriteLine("\nSecventa de numere introdusa contine caractere necorespunzatoare sau nu corespunde lungimii declarate anterior!!!");
-                return;
             }
             catch (FormatException)
             {
