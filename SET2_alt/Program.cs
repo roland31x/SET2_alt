@@ -423,12 +423,17 @@ namespace SET2_alt
                     }
                     prevnr = a;
                 }
+                if(countdescresc== 0 || countcresc== 0)
+                {
+                    Console.WriteLine("Secventa este monotona rotita.");
+                    return;
+                }
                 if (countdescresc < 2 && countcresc < 2) // orice secventa de 3 elemente poate fi rotita sa formeze una monotona.
                 {
                     Console.WriteLine("Secventa este monotona rotita.");
                     return;
                 }
-                else if ( countdescresc < 2 && countcresc > 2 ) // secventa crescatoare
+                if ( countdescresc < 2 && countcresc > 2 ) // secventa crescatoare
                 {
                     if (startseq > endseq)
                     {
@@ -436,7 +441,7 @@ namespace SET2_alt
                         return;
                     }
                 }
-                else if ( countcresc < 2 && countdescresc > 2 ) // secventa descrescatoare
+                if ( countcresc < 2 && countdescresc > 2 ) // secventa descrescatoare
                 {
                     if ( startseq < endseq)
                     {
@@ -444,11 +449,8 @@ namespace SET2_alt
                         return;
                     }
                 }
-                else
-                {
-                    Console.WriteLine("Secventa nu este monotona rotita.");
-                }
-                Console.WriteLine($"C: {countcresc}, D: {countdescresc}");
+                Console.WriteLine("Secventa nu este monotona rotita.");
+                //Console.WriteLine($"C: {countcresc}, D: {countdescresc}");
             }
             catch (FormatException)
             {
