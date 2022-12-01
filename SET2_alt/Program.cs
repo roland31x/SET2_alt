@@ -157,7 +157,7 @@ namespace SET2_alt
                     }
                     if (a == 1)
                     {
-                        countf++;
+                        countst--;
                         incuibaux1--;
                     }
                     if (incuibaux1 > 0 && a == 0)
@@ -169,8 +169,12 @@ namespace SET2_alt
                         }
                     }
                     if (incuibaux1 == 0) incuib = 0;
+                    if(countst < 0)
+                    {
+                        cerinta = false;
+                    }
                 }
-                if (countst != countf || !cerinta)
+                if (countst != 0 || !cerinta)
                 {
                     Console.WriteLine("Secventa introdusa este incorecta");
                     return;
